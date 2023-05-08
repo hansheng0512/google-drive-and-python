@@ -1,0 +1,23 @@
+[
+    {
+        "filename": "test3.mp4",
+        "url": "https://livad-campaign-asset-bucket.s3.eu-central-1.amazonaws.com/obs_stream_event_clips/2/b18ik.mp4?Content-Type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4AJAK4A43RN5K6NN%2F20230127%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20230127T114013Z&X-Amz-Expires=12000&X-Amz-Signature=9abae6af24704ce6a33b224bccc20b7d4307514a0524345f421c581a82154034&X-Amz-SignedHeaders=host%3Bx-amz-acl&x-amz-acl=public-read",
+        "index": 0
+    },
+    {
+        "filename": "test3.mp4",
+        "url": "https://livad-campaign-asset-bucket.s3.eu-central-1.amazonaws.com/obs_stream_event_clips/2/b18ik.mp4?Content-Type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4AJAK4A43RN5K6NN%2F20230127%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20230127T114013Z&X-Amz-Expires=12000&X-Amz-Signature=9abae6af24704ce6a33b224bccc20b7d4307514a0524345f421c581a82154034&X-Amz-SignedHeaders=host%3Bx-amz-acl&x-amz-acl=public-read",
+        "index": 1
+    },
+    {
+        "filename": "test3.mp4",
+        "url": "https://livad-campaign-asset-bucket.s3.eu-central-1.amazonaws.com/obs_stream_event_clips/2/b18ik.mp4?Content-Type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4AJAK4A43RN5K6NN%2F20230127%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20230127T114013Z&X-Amz-Expires=12000&X-Amz-Signature=9abae6af24704ce6a33b224bccc20b7d4307514a0524345f421c581a82154034&X-Amz-SignedHeaders=host%3Bx-amz-acl&x-amz-acl=public-read",
+        "index": 2
+    },
+    {
+        "filename": "test3.mp4",
+        "url": "https://livad-campaign-asset-bucket.s3.eu-central-1.amazonaws.com/obs_stream_event_clips/2/b18ik.mp4?Content-Type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4AJAK4A43RN5K6NN%2F20230127%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20230127T114013Z&X-Amz-Expires=12000&X-Amz-Signature=9abae6af24704ce6a33b224bccc20b7d4307514a0524345f421c581a82154034&X-Amz-SignedHeaders=host%3Bx-amz-acl&x-amz-acl=public-read",
+        "index": 3
+    }
+
+]
