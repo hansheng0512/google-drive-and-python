@@ -5,9 +5,9 @@ from googleapiclient.discovery import build
 from google.auth.transport.requests import Request
 import io
 import argparse
-from apiclient.http import MediaIoBaseDownload
-
-
+from tqdm import tqdm
+from googleapiclient.http import MediaIoBaseDownload
+import re
 # To connect to googel drive api
 # If modifying these scopes, delete the file token.pickle
 CLIENT_SECRET_FILE = "client_secret.json"
@@ -52,15 +52,17 @@ def Create_Service(client_secret_file, api_name, api_version, *scopes):
         return None
 
 
-# Download files
 def downloadfiles(dowid, dfilespath, folder=None):
     request = service.files().get_media(fileId=dowid)
     fh = io.BytesIO()
     downloader = MediaIoBaseDownload(fh, request)
     done = False
+    pbar = tqdm(total=100, ncols=70)
     while done is False:
         status, done = downloader.next_chunk()
-        print("Download %d%%." % int(status.progress() * 100))
+        if status:
+            pbar.update(int(status.progress() * 100) - pbar.n)
+    pbar.close()
     if folder:
         with io.open(folder + "/" + dfilespath, "wb") as f:
             fh.seek(0)
@@ -118,6 +120,7 @@ def downloadfolders(folder_ids):
             page_token = results.get("nextPageToken", None)
             if page_token is None:
                 items = results.get("files", [])
+                #send all items in this section
                 if not items:
                     # download files
                     downloadfiles(folder_id, folder_name) 
@@ -146,7 +149,6 @@ def downloadfolders(folder_ids):
                             downloadfiles(item["id"], filepath)
                             print(item["name"])
             break
-
 
 # Search id of specific folder name under a parent folder id
 def get_gdrive_id(folder_ids, folder_names):
@@ -189,13 +191,44 @@ def parse_opt():
         nargs="*",
         help="Specific folder names you would like to download (Optional).",
     )
+    parser.add_argument(
+        "-l",
+        "--link",
+        type=str,
+        nargs="+",
+        help="Specific links you would like to download (Must have).",
+    )
     opt = parser.parse_args()
     return opt
 
+def extract_drive_id(links):
+    # Remove any leading or trailing spaces from the link
+    print(links)
+    output = []
+    for link in links:
+        link = link.strip()
 
+        if "folders" in link:
+            pattern = r"(?<=folders\/)[^/|^?]+"
+        else:
+            pattern = r"(?<=/d/|id=)[^/|^?]+"
+
+        match = re.search(pattern, link)
+    
+        if match:
+            output.append(match.group())
+    if output:
+        return output
+    else:
+        return None
+    
 def main(opt):
-    if opt.name:
-        get_gdrive_id(opt.id, opt.name)
+    if opt.link:
+        uniq_id = extract_drive_id(opt.link)
+        downloadfolders(uniq_id)
+    elif opt.name:
+        uniq_id = extract_drive_id(opt.link)
+        get_gdrive_id(uniq_id, opt.name)
     elif opt.id:
         downloadfolders(opt.id)
     else:
