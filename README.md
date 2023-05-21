@@ -4,10 +4,8 @@ A python scripts that uses Google Drive API to download folders or files.
 ## Demo
 
 
-<p align="center">
-  <img src= "https://github.com/egemengulpinar/google-drive-and-python/blob/master/screenshots/demo.gif" />
-</p>
 
+![demo](https://github.com/egemengulpinar/google-drive-and-python/assets/71253469/a03edddc-1483-4afa-825d-07c653caeb78)
 
 ## Installation 
 1. Git clone this repo:
