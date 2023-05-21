@@ -5,7 +5,7 @@ A python scripts that uses Google Drive API to download folders or files.
 
 
 <p align="center">
-  <img src= "" />
+  <img src= "https://github.com/egemengulpinar/google-drive-and-python/blob/master/screenshots/demo.gif" />
 </p>
 
 
@@ -14,7 +14,7 @@ A python scripts that uses Google Drive API to download folders or files.
 ```
 git clone https://github.com/Techyhans/google-api-scraping.git
 ```
-2. Create an Python 3.8.5 (or higher) environment:
+2. Create an Python 3.8.5 >= environment:
 ```
 conda create -n gdrive-api python=3.10.9
 conda activate gdrive-api
